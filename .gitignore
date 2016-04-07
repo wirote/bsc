@@ -19,6 +19,12 @@ Thumbs.db
 
 # composer itself is not needed
 composer.phar
+.gitignore
+yii
+yii.bat
+LICENSE.md
+composer.lock
+requirements.php
 
 # Mac DS_Store Files
 .DS_Store
