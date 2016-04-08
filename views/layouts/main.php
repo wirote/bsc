@@ -31,10 +31,10 @@ MaterialAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'สบส.กสธ.',
+        'brandLabel' => 'สำนักบริหารสาธารณสุข',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar navbar-fixed-top',
+            'class' => 'navbar navbar-default navbar-fixed-top',
         ],
     ]);
     echo Nav::widget([
