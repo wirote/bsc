@@ -37,10 +37,14 @@ MaterialAsset::register($this);
             'class' => 'navbar navbar-default navbar-fixed-top',
         ],
     ]);
+    $rpt_items[] = ['label' => 'First', 'url' => ['/first/index']];
+    $rpt_items[] = ['label' => 'About', 'url' => ['/site/about']];
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Report',
+                'items' => $rpt_items],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (

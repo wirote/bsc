@@ -15,18 +15,17 @@ use yii\web\AssetBundle;
  */
 class MaterialAsset extends AssetBundle
 {
-    //public $sourcePath = '@themes/material';
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'material/css/material-wfont.css',
-        'material/css/material.css',
-        'material/css/ripples.css',
+        'material/css/material-wfont.min.css',
+        'material/css/material.min.css',
+        'material/css/ripples.min.css',
         'material/css/style.css',
     ];
     public $js = [
-        'material/js/material.min.css',
-        'material/js/ripples.min.css',
+        'material/js/material.min.js',
+        'material/js/ripples.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
