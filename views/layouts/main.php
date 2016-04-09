@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -38,29 +39,28 @@ MaterialAsset::register($this);
         ],
     ]);
     // Report Menu items
-    $rpt_items[] = ['label' => 'First', 'url' => ['/first/index']];
-    $rpt_items[] = ['label' => 'Frontend', 'url' => ['/frontend/index']];
+    $rpt_items[] = ['label' => '<span class="glyphicon glyphicon-text-color" aria-hidden="true"></span> First', 'url' => ['/first/index']];
+    $rpt_items[] = ['label' => '<span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Frontend', 'url' => ['/frontend/index']];
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Reports',
+            ['label' => '<span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home', 'url' => ['/site/index']],
+            ['label' => '<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports',
                 'items' => $rpt_items],
-            ['label' => 'Systems', 'url' => ['/backend/index']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => '<span class="glyphicon glyphicon-road" aria-hidden="true"></span> About', 'url' => ['/site/about']],
+            ['label' => '<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
+                ['label' => '<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login', 'url' => ['/site/login']]
             ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link']
-                )
-                . Html::endForm()
-                . '</li>'
+                ['label'=>'<span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> System ('.Yii::$app->user->identity->username.')',
+                    'items' => [
+                        ['label' => '<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Setup', 'url' => ['/backend/index']],
+                        ['label' => '<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout', 'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']]
+                    ]
+                ]                
             )
         ],
+        'encodeLabels' => false,
     ]);
     NavBar::end();
     ?>
