@@ -37,15 +37,16 @@ MaterialAsset::register($this);
             'class' => 'navbar navbar-default navbar-fixed-top',
         ],
     ]);
+    // Report Menu items
     $rpt_items[] = ['label' => 'First', 'url' => ['/first/index']];
-    $rpt_items[] = ['label' => 'About', 'url' => ['/site/about']];
+    $rpt_items[] = ['label' => 'Frontend', 'url' => ['/frontend/index']];
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Report',
+            ['label' => 'Reports',
                 'items' => $rpt_items],
-            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Systems', 'url' => ['/backend/index']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
