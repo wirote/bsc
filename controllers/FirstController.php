@@ -23,7 +23,7 @@ class FirstController extends \yii\web\Controller {
         // แสดงการส่งค่า
         return $this->render('page2',['show1'=>$show1,'a'=>$a,'b'=>$b,'c1'=>$c1,'c2'=>$c2,]);
         //$param = ['show1'=>$show1,'a'=>$a,'b'=>$b,'c1'=>$c1,'c2'=>$c2,];
-        //return $this->render('page2',$param);        
+        //return $this->render('page2',$param);
     }
 
     public function actionArray1($fname = NULL, $lname = NULL) {
