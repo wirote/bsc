@@ -358,12 +358,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "4b79b496cb41feb1018f02566b6a149a6ee37534"
+                "reference": "87d3308691b1123a649dbe493cf665c27a4d3a29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/4b79b496cb41feb1018f02566b6a149a6ee37534",
-                "reference": "4b79b496cb41feb1018f02566b6a149a6ee37534",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/87d3308691b1123a649dbe493cf665c27a4d3a29",
+                "reference": "87d3308691b1123a649dbe493cf665c27a4d3a29",
                 "shasum": ""
             },
             "require": {
@@ -444,7 +444,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-04-09 17:48:33"
+            "time": "2016-04-11 23:32:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -628,12 +628,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "684eab1624a66a4c37762c747c88a7f8664c65bf"
+                "reference": "172d1bb0cf1b5cb8dec8385028a8d0219523d0a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/684eab1624a66a4c37762c747c88a7f8664c65bf",
-                "reference": "684eab1624a66a4c37762c747c88a7f8664c65bf",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/172d1bb0cf1b5cb8dec8385028a8d0219523d0a9",
+                "reference": "172d1bb0cf1b5cb8dec8385028a8d0219523d0a9",
                 "shasum": ""
             },
             "require": {
@@ -670,7 +670,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2016-04-06 16:46:55"
+            "time": "2016-04-11 16:42:15"
         },
         {
             "name": "kartik-v/yii2-grid",
@@ -1005,12 +1005,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "cd406c69d7fcf8bbc4760622778579a676dc0626"
+                "reference": "0b7eb271ba4785beb1184c6b09d3349065a2b426"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/cd406c69d7fcf8bbc4760622778579a676dc0626",
-                "reference": "cd406c69d7fcf8bbc4760622778579a676dc0626",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/0b7eb271ba4785beb1184c6b09d3349065a2b426",
+                "reference": "0b7eb271ba4785beb1184c6b09d3349065a2b426",
                 "shasum": ""
             },
             "require": {
@@ -1044,7 +1044,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2016-04-11 12:13:53"
+            "time": "2016-04-11 22:39:53"
         },
         {
             "name": "yiisoft/yii2-faker",

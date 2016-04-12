@@ -20,5 +20,20 @@ $this->params['breadcrumbs'][] = $this->title;
         <td><?= Html::a('Graph2','index.php?r=chart/graph2')?></td>
         <td><?= Url::to('chart/graph2') ?></td>
     </tr>
+    <tr>
+        <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
+        <td><?= Html::a('Graph3','index.php?r=chart/graph3')?></td>
+        <td><?= Url::to('chart/graph3') ?></td>
+    </tr>
+    <tr>
+        <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
+        <td><?= Html::a('Graph4','index.php?r=chart/graph4')?></td>
+        <td><?= Url::to('chart/graph4') ?></td>
+    </tr>
+    <tr>
+        <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
+        <td><?= Html::a('Graph5','index.php?r=chart/graph5')?></td>
+        <td><?= Url::to('chart/graph5') ?></td>
+    </tr>
     
 </table>

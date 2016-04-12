@@ -32,7 +32,7 @@ $gridcolumns = [
     'tableOptions' => [
         'class' => 'table table-striped table-bordered table-responsive table-hover'
     ],
-    //'headerRowOptions'=> 'success'
+    'headerRowOptions'=> ['class' => 'success'],
     'columns' => $gridcolumns,
 ]); ?>
 
