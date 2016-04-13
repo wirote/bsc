@@ -358,12 +358,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "87d3308691b1123a649dbe493cf665c27a4d3a29"
+                "reference": "89f0dae50f0dc51eb153bf2995e3f9b28fc2e5fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/87d3308691b1123a649dbe493cf665c27a4d3a29",
-                "reference": "87d3308691b1123a649dbe493cf665c27a4d3a29",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/89f0dae50f0dc51eb153bf2995e3f9b28fc2e5fe",
+                "reference": "89f0dae50f0dc51eb153bf2995e3f9b28fc2e5fe",
                 "shasum": ""
             },
             "require": {
@@ -444,7 +444,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-04-11 23:32:00"
+            "time": "2016-04-13 10:01:46"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -628,12 +628,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "172d1bb0cf1b5cb8dec8385028a8d0219523d0a9"
+                "reference": "1c33e894fbbad6cf65bd42871719cd33227ed6a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/172d1bb0cf1b5cb8dec8385028a8d0219523d0a9",
-                "reference": "172d1bb0cf1b5cb8dec8385028a8d0219523d0a9",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/1c33e894fbbad6cf65bd42871719cd33227ed6a7",
+                "reference": "1c33e894fbbad6cf65bd42871719cd33227ed6a7",
                 "shasum": ""
             },
             "require": {
@@ -670,7 +670,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2016-04-11 16:42:15"
+            "time": "2016-04-13 06:45:05"
         },
         {
             "name": "kartik-v/yii2-grid",

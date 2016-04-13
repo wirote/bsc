@@ -33,5 +33,12 @@ group by t.companyid
         ]);
     }
 
-    
+    public function actionGraph4() {
+        return $this->render('graph4');
+    }
+
+    public function actionGraph5() {
+        return $this->render('graph5');
+    }
+
 }
