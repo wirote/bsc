@@ -3,7 +3,7 @@ $this->title = 'Graph5';
 $this->params['breadcrumbs'][] = [
     'label' => 'Graph',
     'url' => [
-        '/chart',
+        '/chart/index',
         ]
     ];
 $this->params['breadcrumbs'][] = $this->title;

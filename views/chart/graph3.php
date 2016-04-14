@@ -5,7 +5,7 @@ $this->title = 'Graph3';
 $this->params['breadcrumbs'][] = [
     'label' => 'Graph',
     'url' => [
-        '/chart',
+        '/chart/index',
         ]
     ];
 $this->params['breadcrumbs'][] = $this->title;
@@ -59,10 +59,10 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Monthly Average Rainfall'
+            text: 'Quantity of Products'
         },
         subtitle: {
-            text: 'Source: WorldClimate.com'
+            text: 'Source: Wirote.com'
         },
         xAxis: {
             categories: ['$xcategories'],
@@ -71,7 +71,7 @@ $(function () {
         yAxis: {
             min: 0,
             title: {
-                text: 'Rainfall (mm)'
+                text: 'Quantity'
             }
         },
         tooltip: {
@@ -89,9 +89,9 @@ $(function () {
             }
         },
         series: [{
-            name: 'Tokyo',
-            data: [$yseries]
-
+            name: 'Product',
+            data: [$yseries],
+            color: '#ea80fc'
         }]
     });
 });"
