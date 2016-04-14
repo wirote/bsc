@@ -17,8 +17,13 @@ $option = ['target'=>'_blank'];
     </tr>
     <tr>
         <td style="width: 3%; color: green"><span class="glyphicon glyphicon-hand-right"></span></td>
-        <td><?= Html::a('PJAX from cmidata','index.php?r=cmidata')?></td>
+        <td><?= Html::a('PJAX from cmidata','../cmidata/index')?></td>
         <td><?= Url::to('cmidata/index') ?></td>
+    </tr>
+    <tr>
+        <td style="width: 3%; color: green"><span class="glyphicon glyphicon-hand-right"></span></td>
+        <td><?= Html::a('เปลี่ยน Themes','../themes/index')?></td>
+        <td><?= Url::to('themes/index') ?></td>
     </tr>
     <tr>
         <td style="width: 3%; color: green"><span class="glyphicon glyphicon-hand-right"></span></td>

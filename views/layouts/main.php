@@ -8,13 +8,27 @@ use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use app\models\Themes;
+$themes = Themes::findOne(['work'=>'Y' ]);
+use app\assets\MaterialAsset;
+use app\assets\DarklyAsset;
+use app\assets\AppAsset;
+
+if ($themes->themes == 'Darkly') {
+    DarklyAsset::register($this);
+} elseif ($themes->themes == 'Material') {
+    MaterialAsset::register($this);
+} else {
+    AppAsset::register($this);
+}
 /*
 use app\assets\AppAsset;
 AppAsset::register($this);
- */
 use app\assets\MaterialAsset;
 MaterialAsset::register($this);
-
+use app\assets\DarklyAsset;
+DarklyAsset::register($this);
+*/
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
