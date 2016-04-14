@@ -19,11 +19,22 @@ HighchartsAsset::register($this)->withScripts([
 ]);
 
 ?>
- <div id="guage1" style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div>
+<div class="row">
+    <div class="col-md-6">
+        <div id="guage1" style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div> 
+    </div>
+    <div class="col-md-6">
+        <div id="guage2" style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div>
+    </div>
+</div>
+ 
 <!--
 -->
 <?php 
-$chart_title = "กราฟแสดง";
+$chart_title = "กราฟแสดงค่ามากไม่ผ่าน";
+$chart_data = 75;
+$chart_title2 = "กราฟแสดงค่าน้อยไม่ผ่าน";
+$chart_data2 = 15;
 ?>
 <?php
 // start chart
@@ -83,28 +94,70 @@ $(function () {
         },
         series: [{
             name: 'ร้อยละ',
-            data: [80],
+            data: [$chart_data],
             tooltip: {
                 valueSuffix: '  '
             }
         }]
-
-    },
-    // Add some life
-    function (chart) {
-        if (!chart.renderer.forExport) {
-            setInterval(function () {
-                var point = chart.series[0].points[0],
-                    newVal,
-                    inc = Math.round((Math.random() - 0.5) * 20);
-                newVal = point.y + inc;
-                if (newVal < 0 || newVal > 100) {
-                    newVal = point.y - inc;
-                }
-                point.update(newVal);
-            }, 3000);
-        }
     });
+    
+    $('#guage2').highcharts({
+        chart: {
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: null,
+            plotBorderWidth: 0,
+            plotShadow: false
+        },
+        title: {
+            text: '$chart_title'
+        },
+        credits: {\"enabled\": false},
+        pane: {
+            startAngle: -90,
+            endAngle: 90,
+            background: null
+        },
+        // the value axis
+        yAxis: {
+            min: 0,
+            max: 100,
+            minorTickInterval: 'auto',
+            minorTickWidth: 1,
+            minorTickLength: 10,
+            minorTickPosition: 'inside',
+            minorTickColor: '#666',
+            tickPixelInterval: 30,
+            tickWidth: 2,
+            tickPosition: 'inside',
+            tickLength: 10,
+            tickColor: '#666',
+            labels: {
+                step: 2,
+                rotation: 'auto'
+            },
+            title: {
+                text: 'ร้อยละ'
+            },
+            plotBands: [{
+                from: 0,
+                to: 20,
+                color: '#DF5353' // red
+            }, {
+                from: 20,
+                to: 100,
+                color: '#55BF3B' // green
+            }]
+        },
+        series: [{
+            name: 'ร้อยละ',
+            data: [$chart_data2],
+            tooltip: {
+                valueSuffix: '  '
+            }
+        }]
+    });
+
 });
 ");
 //end chart
