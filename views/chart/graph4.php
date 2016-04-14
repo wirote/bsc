@@ -19,18 +19,17 @@ HighchartsAsset::register($this)->withScripts([
 ]);
 
 ?>
- <div id="container" style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div>
+ <div id="guage1" style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div>
 <!--
-<div id="container-speed"></div>
-<div id="container-rpm"></div>
 -->
+<?php 
+$chart_title = "กราฟแสดง";
+?>
 <?php
 // start chart
 $this->registerJs("
 $(function () {
-
-    $('#container').highcharts({
-
+    $('#guage1').highcharts({
         chart: {
             type: 'gauge',
             plotBackgroundColor: null,
@@ -38,55 +37,24 @@ $(function () {
             plotBorderWidth: 0,
             plotShadow: false
         },
-
         title: {
-            text: 'Speedometer'
+            text: '$chart_title'
         },
-
+        credits: {\"enabled\": false},
         pane: {
             startAngle: -90,
             endAngle: 90,
-            background: [{
-                backgroundColor: {
-                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-                    stops: [
-                        [0, '#FFF'],
-                        [1, '#333']
-                    ]
-                },
-                borderWidth: 0,
-                outerRadius: '109%'
-            }, {
-                backgroundColor: {
-                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-                    stops: [
-                        [0, '#333'],
-                        [1, '#FFF']
-                    ]
-                },
-                borderWidth: 1,
-                outerRadius: '107%'
-            }, {
-                // default background
-            }, {
-                backgroundColor: '#DDD',
-                borderWidth: 0,
-                outerRadius: '105%',
-                innerRadius: '103%'
-            }]
+            background: null
         },
-
         // the value axis
         yAxis: {
             min: 0,
             max: 100,
-
             minorTickInterval: 'auto',
             minorTickWidth: 1,
             minorTickLength: 10,
             minorTickPosition: 'inside',
             minorTickColor: '#666',
-
             tickPixelInterval: 30,
             tickWidth: 2,
             tickPosition: 'inside',
@@ -97,7 +65,7 @@ $(function () {
                 rotation: 'auto'
             },
             title: {
-                text: 'km/h'
+                text: 'ร้อยละ'
             },
             plotBands: [{
                 from: 0,
@@ -113,12 +81,11 @@ $(function () {
                 color: '#DF5353' // red
             }]
         },
-
         series: [{
-            name: 'Speed',
+            name: 'ร้อยละ',
             data: [80],
             tooltip: {
-                valueSuffix: ' km/h'
+                valueSuffix: '  '
             }
         }]
 
@@ -130,14 +97,11 @@ $(function () {
                 var point = chart.series[0].points[0],
                     newVal,
                     inc = Math.round((Math.random() - 0.5) * 20);
-
                 newVal = point.y + inc;
                 if (newVal < 0 || newVal > 100) {
                     newVal = point.y - inc;
                 }
-
                 point.update(newVal);
-
             }, 3000);
         }
     });
