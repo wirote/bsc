@@ -17,7 +17,7 @@ $option = ['target'=>'_blank'];
     </tr>
     <tr>
         <td style="width: 3%; color: green"><span class="glyphicon glyphicon-hand-right"></span></td>
-        <td><?= Html::a('ทดสอบ CRUD (cmidata)','index.php?r=cmidata')?></td>
+        <td><?= Html::a('PJAX from cmidata','index.php?r=cmidata')?></td>
         <td><?= Url::to('cmidata/index') ?></td>
     </tr>
     <tr>
@@ -44,5 +44,10 @@ $option = ['target'=>'_blank'];
         <td style="width: 3%; color: green"><span class="glyphicon glyphicon-hand-right"></span></td>
         <td><?= Html::a('Gridview In Yiiframework 2.0','http://www.bsourcecode.com/yiiframework2/gridview-in-yiiframework-2-0/',$option)?></td>
         <td><?= Url::to('http://www.bsourcecode.com/yiiframework2/gridview-in-yiiframework-2-0/') ?></td>
+    </tr>
+    <tr>
+        <td style="width: 3%; color: green"><span class="glyphicon glyphicon-hand-right"></span></td>
+        <td><?= Html::a('highcharts','http://www.highcharts.com/demo',$option)?></td>
+        <td><?= Url::to('http://www.highcharts.com/demo') ?></td>
     </tr>
 </table>

@@ -15,9 +15,12 @@ echo $name;
 echo "<hr>";
 
 $link1 = Yii::$app->urlManager->createUrl(['site/index']);
-$link2 = Yii::$app->urlManager->createUrl(['first/array1','fname'=>'Jame','lname'=>'Ji']);
+$link2 = Yii::$app->urlManager->createUrl(['first/array1','fname'=>' Wirote ','lname'=>' Thudsaringkansakul ']);
+$link3 = Yii::$app->urlManager->createUrl(['first/array1','fname'=>' Jame ','lname'=>' Ji ']);
 ?>
 <a href="<?= $link1 ?>">หน้าแรก</a>
 <hr />
 <a href="<?= $link2 ?>">ทดสอบส่งค่า</a>
-
+<hr />
+<a href="<?= $link3 ?>">ทดสอบส่งค่า</a>
+<hr />
