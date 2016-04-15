@@ -56,6 +56,7 @@ DarklyAsset::register($this);
     $rpt_items[] = ['label' => '<span class="glyphicon glyphicon-text-color" aria-hidden="true"></span> First', 'url' => ['/first/index']];
     $rpt_items[] = ['label' => '<span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Frontend', 'url' => ['/frontend/index']];
     $rpt_items[] = ['label' => '<span class="glyphicon glyphicon-signal" aria-hidden="true"></span> Graph', 'url' => ['/chart/index']];
+    $rpt_items[] = ['label' => '<span class="glyphicon glyphicon-signal" aria-hidden="true"></span> Final', 'url' => ['/final/index']];
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
