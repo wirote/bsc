@@ -1,41 +1,12 @@
-<?php
-$this->title = 'Graph5';
-$this->params['breadcrumbs'][] = [
-    'label' => 'Graph',
-    'url' => [
-        '/chart/index',
-        ]
-    ];
-$this->params['breadcrumbs'][] = $this->title;
-
-?>
-<?php
-use miloschuman\highcharts\Highcharts;
-use miloschuman\highcharts\HighchartsAsset;
-
-HighchartsAsset::register($this)->withScripts([
-    'highcharts-more',
-    'themes/grid'
-]);
-
-?>
-<div id="container"></div>
-
-
-<?php
-// start chart
-$this->registerJs("
-$(function () {
-
+function gen_combin (obj, base, value) {
     var renderer = new Highcharts.Renderer(
-            $('#container')[0],
-            400,
-            300
-        ),
-        rect = renderer.rect(100, 100, 100, 100, 5)
-            .add();
-
-    $('#container').highcharts({
+        obj[0],
+        400,
+        300
+    ),
+    rect = renderer.rect(100, 100, 100, 100, 5)
+        .add();
+    obj.highcharts({
         title: {
             text: 'Combination chart'
         },
@@ -95,11 +66,8 @@ $(function () {
             dataLabels: {
                 enabled: false
             }
-        }]
-    });
-    
-   $(\"rect\").attr(\"stroke-width\", \"0\"); // here you can change the stroke-width
-});
-    
-");
-//end chart
+                
+            }]// จบ content
+    });// จบ chart
+    $("rect").attr("stroke-width", "0"); // here you can change the stroke-width
+}

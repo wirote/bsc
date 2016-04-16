@@ -41,4 +41,8 @@ group by t.companyid
         return $this->render('graph5');
     }
 
+    public function actionGraph6() {
+        return $this->render('graph6');
+    }
+
 }
