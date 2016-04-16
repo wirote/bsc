@@ -42,7 +42,18 @@ group by t.companyid
     }
 
     public function actionGraph6() {
-        return $this->render('graph6');
+        $sql = "
+select t.companyid, c.company, count(t.companyid) as cnt, sum(t.qty) as qty, 70 as target
+from sale t join company c on t.companyid = c.id
+group by t.companyid
+";
+        $data = \Yii::$app->db->createCommand($sql)->queryAll();
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $data,
+        ]);
+        return $this->render('graph6',[
+            'dataProvider'=>$dataProvider,
+        ]);
     }
 
 }

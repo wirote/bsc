@@ -35,5 +35,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <td><?= Html::a('Graph5','graph5')?></td>
         <td><?= Url::to('chart/graph5') ?></td>
     </tr>
-    
+    <tr>
+        <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
+        <td><?= Html::a('Graph6','graph6')?></td>
+        <td><?= Url::to('chart/graph6') ?></td>
+    </tr>
 </table>

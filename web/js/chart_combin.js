@@ -1,4 +1,9 @@
-function gen_combin (obj, base, value) {
+function gen_combin (obj, base, xvalue, yvalue) {
+    // แสดงใน console ของ firebug
+    /*
+    console.log(xvalue);
+    console.log(yvalue);
+    */
     var renderer = new Highcharts.Renderer(
         obj[0],
         400,
@@ -8,14 +13,18 @@ function gen_combin (obj, base, value) {
         .add();
     obj.highcharts({
         title: {
-            text: 'Combination chart'
+            text: 'ตัวชี้วัด'
         },
+        credits: {"enabled": false},
         xAxis: {
-            categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+            categories: xvalue
+        },
+        yAxis: {
+            title: {text:'จำนวน'}
         },
         labels: {
             items: [{
-                html: 'Total fruit consumption',
+                html: '',
                 style: {
                     left: '50px',
                     top: '18px',
@@ -25,49 +34,19 @@ function gen_combin (obj, base, value) {
         },
         series: [{
             type: 'column',
-            name: 'Jane',
-            data: [3, 2, 1, 3, 4]
-        }, {
-            type: 'column',
-            name: 'John',
-            data: [2, 3, 5, 7, 6]
-        }, {
-            type: 'column',
-            name: 'Joe',
-            data: [4, 3, 3, 9, 0]
-        }, {
+            name: 'ผลงาน',
+            color: '#50B432',
+            data: yvalue
+        },{
             type: 'spline',
-            name: 'Average',
-            data: [3, 2.67, 3, 6.33, 3.33],
+            name: 'เป้าหมาย',
+            data: base,
             marker: {
                 lineWidth: 2,
                 lineColor: Highcharts.getOptions().colors[3],
                 fillColor: 'white'
             }
-        }, {
-            type: 'pie',
-            name: 'Total consumption',
-            data: [{
-                name: 'Jane',
-                y: 13,
-                color: Highcharts.getOptions().colors[0] // Jane's color
-            }, {
-                name: 'John',
-                y: 23,
-                color: Highcharts.getOptions().colors[1] // John's color
-            }, {
-                name: 'Joe',
-                y: 19,
-                color: Highcharts.getOptions().colors[2] // Joe's color
-            }],
-            center: [100, 80],
-            size: 100,
-            showInLegend: false,
-            dataLabels: {
-                enabled: false
-            }
-                
-            }]// จบ content
+    }]// จบ content
     });// จบ chart
-    $("rect").attr("stroke-width", "0"); // here you can change the stroke-width
+    $("rect").attr("stroke-width", "0");
 }

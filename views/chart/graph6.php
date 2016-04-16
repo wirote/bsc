@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Graph5';
+$this->title = 'Graph6';
 $this->params['breadcrumbs'][] = [
     'label' => 'Graph',
     'url' => [
@@ -18,21 +18,32 @@ HighchartsAsset::register($this)->withScripts([
     'themes/grid'
 ]);
 $this->registerJsFile("../js/chart_combin.js");
+$tbldata = $dataProvider->getModels();
 ?>
 <div id="chart1"></div>
 
 <?php
-$target = 503;
-$result = 102;
-$persent = 0.00;
-if ($target > 0) {
-    $persent = $result / $target * 100;
-    $persent = number_format($persent, 2);
+// ใส่ชื่อแกน X
+$xname = [];
+// ใส่ data แกน Y
+$ydata = [];
+$target = [];
+for ($i = 0; $i < count($tbldata); $i++) {
+    $xname[] = $tbldata[$i]['company'];
+    $ydata[] = (int) $tbldata[$i]['qty'];
+    $target[] = (int) $tbldata[$i]['target'];
 }
-$base = 90;
+/*
+$xcategories = implode("','", $xname);
+$yseries = implode(",", $ydata);
+*/
+$xsend = json_encode($xname);
+$ysend = json_encode($ydata);
+$base = json_encode($target);
+
 $this->registerJs("
-                        var obj_div=$('#chart1');
-                        gen_combin(obj_div,$base,$persent);
-                    ");
+    var objchart=$('#chart1');
+    gen_combin(objchart,$base,$xsend,$ysend);
+");
 ?>
 
