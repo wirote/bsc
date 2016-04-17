@@ -10,21 +10,19 @@ use Yii;
  * @property string $ampcode
  * @property string $ampname
  */
-class Ampur extends \yii\db\ActiveRecord
-{
+class Ampur extends \yii\db\ActiveRecord {
+
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'ampur';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['ampcode'], 'required'],
             [['ampcode'], 'string', 'max' => 4],
@@ -35,11 +33,11 @@ class Ampur extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'ampcode' => 'Ampcode',
             'ampname' => 'Ampname',
         ];
     }
+
 }

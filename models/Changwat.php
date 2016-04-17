@@ -27,7 +27,7 @@ class Changwat extends \yii\db\ActiveRecord {
     public function rules() {
         return [
             [['chwcode'], 'required'],
-            [['chwcode', 'ampcode'], 'string', 'max' => 2],
+            [['chwcode', 'ampcode'], 'string'],
             [['chwname'], 'string', 'max' => 50],
             [['tmbcode'], 'string', 'max' => 4],
         ];

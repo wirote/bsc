@@ -13,8 +13,8 @@ use yii\helpers\Url;
     </tr>
     <tr>
         <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
-        <td><?= Html::a('แสดงข้อมูล 12 เดือน','#')?></td>
-        <td><?= Url::to('') ?></td>
+        <td><?= Html::a('แสดงข้อมูล 12 เดือน','rpt1')?></td>
+        <td><?= Url::to('final/rpt1') ?></td>
     </tr>
     <tr>
         <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
