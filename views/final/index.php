@@ -18,8 +18,8 @@ use yii\helpers\Url;
     </tr>
     <tr>
         <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
-        <td><?= Html::a('','#')?></td>
-        <td><?= Url::to('') ?></td>
+        <td><?= Html::a('Dropdown List','depdropdown')?></td>
+        <td><?= Url::to('final/depdropdown') ?></td>
     </tr>
     <tr>
         <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
