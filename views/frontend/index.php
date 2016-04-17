@@ -43,5 +43,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
         <td><?= Html::a('ArrayDataProvider','arraydata')?></td>
         <td><?= Url::to('frontend/arraydata') ?></td>
-    </tr>    
+    </tr>
+    <tr>
+        <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
+        <td><?= Html::a('GridView1','kartik1')?></td>
+        <td><?= Url::to('frontend/kartik1') ?></td>
+    </tr>
+    
 </table>
