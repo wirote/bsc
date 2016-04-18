@@ -19,7 +19,6 @@ $this->params['breadcrumbs'][] = $this->title;
     'condensed' => false,
     'responsive' => true,
     'hover' => true,
-    //'captionOptions' => ['class' => 'kv-table-caption'],
     'headerRowOptions'=> ['class' => GridView::TYPE_WARNING],
     'floatHeader' => true,
     'panel'=>[
