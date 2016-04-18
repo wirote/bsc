@@ -7,6 +7,7 @@ $config = [
     'name'=>'สำนักบริหารสาธารณสุข',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'timeZone' => 'Asia/Bangkok',
     'modules' => [
         'gridview' =>  ['class' => '\kartik\grid\Module'],
     ],

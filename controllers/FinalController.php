@@ -17,20 +17,20 @@ class FinalController extends \yii\web\Controller {
     public function actionDepdropdown() {
         $model = new Changwat();
         return $this->render('dropdown', [
-                'model' => $model,
-            ]);
+                    'model' => $model,
+        ]);
     }
 
     public function actionAmplist($chwcode) {
         $countAmp = Ampur::find()
-                ->where(['chwcode'=>$chwcode])
+                ->where(['chwcode' => $chwcode])
                 ->count();
         $amps = Ampur::find()
-                ->where(['chwcode'=>$chwcode])
+                ->where(['chwcode' => $chwcode])
                 ->all();
         if ($countAmp > 0) {
             foreach ($amps as $amp) {
-                echo "<option value='".$amp->ampcode."'>".$amp->ampname."</option>" ;
+                echo "<option value='" . $amp->ampcode . "'>" . $amp->ampname . "</option>";
             }
         } else {
             echo "<option> - </option>";
@@ -52,7 +52,40 @@ GROUP BY t.chwcode
             'allModels' => $data,
         ]);
         return $this->render('rpt1', [
-            'dataProvider' => $dataProvider,
+                    'dataProvider' => $dataProvider,
         ]);
+    }
+
+    public function actionKpi() {
+        $sql = "
+SELECT k.id, k.kpiname, k.kpidesc, k.acol, k.bcol, k.target
+FROM kpi k
+";
+        $data = Yii::$app->db->createCommand($sql)->queryAll();
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $data,
+        ]);
+        return $this->render('kpi1', [
+                    'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionKpidetail($id) {
+        $sql = "
+SELECT k.id, k.kpiname, k.kpidesc, k.acol, k.bcol, k.target
+FROM kpi k
+WHERE k.id = $id
+";
+        $data = Yii::$app->db->createCommand($sql)->queryAll();
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $data,
+        ]);
+        return $this->render('kpidetail', [
+                    'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionKpidata() {
+        return $this->render('kpidata');
     }
 }
