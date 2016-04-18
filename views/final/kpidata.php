@@ -1,5 +1,8 @@
 <?php
 use kartik\grid\GridView;
+use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+use app\models\Yearselect;
 
 $this->title = 'Final Report1';
 $this->params['breadcrumbs'][] = [
@@ -10,7 +13,19 @@ $this->params['breadcrumbs'][] = [
     ];
 $this->params['breadcrumbs'][] = $this->title;
 
+$y = isset($_REQUEST['year'])?$_REQUEST['year']:"";
+$yearshow = !empty($y) ? $y+543 : "";
 ?>
+<!-- ส่วนแสดง dropdown -->
+<?= Html::beginForm(); ?>
+<?= Html::label('ปีงบประมาณ') ?>
+<?= Html::dropDownList('year', $y, ArrayHelper::map(
+    Yearselect::find()->orderBy('yearvalue desc')->all(),
+    'yearvalue', 'yearthai'),
+    ['class' => 'form-control', 'prompt' => 'โปรดเลือกปี...', 'required' => true]);
+?>
+<?= Html::submitButton('ค้นหา',['class'=>'btn btn-primary']); ?>
+<?=Html::endForm(); ?>
 
 <!-- ส่วนแสดงตาราง -->
 <?= GridView::widget([
@@ -25,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
     'panel'=>[
         'heading'=>'<h3 class="panel-title"><i class="glyphicon glyphicon-globe"></i> The Final Page </h3>',
         'type'=>'success',
-        'before' => '<h1 style="text-align:center">รายงานแสดงข้อมูลผู้ป่วยใน</h1>',
+        'before' => '<h1 style="text-align:center">รายงานแสดงข้อมูลผู้ป่วยใน '.$yearshow.'</h1>',
         'after'=>'ประมวลผลวันที่ '.date('Y-m-d H:i:s'),
         
     ],
