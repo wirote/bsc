@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'headerOptions' => ['class'=>'text-center'],
             'contentOptions' => ['class'=>'text-left'],
             'value' => function($data){
-                 return Html::a($data['kpiname'], 'kpidetail?id='.$data['id'], ['id' => $data['id']]); 
+                 return Html::a($data['kpiname'], 'kpidetail?id='.$data['id']); 
              }
         ],
         [

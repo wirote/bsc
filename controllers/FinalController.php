@@ -96,6 +96,7 @@ SELECT t.kpiid, t.byear, t.divide, t.denom, t.result
 , k.kpiname, k.acol, k.bcol, k.target
 FROM kpidata t JOIN kpi k on t.kpiid = k.id
 WHERE t.byear = '$byear'
+ORDER BY t.kpiid
 ";
         $data = Yii::$app->db->createCommand($sql)->queryAll();
         $dataProvider = new ArrayDataProvider([

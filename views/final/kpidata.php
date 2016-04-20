@@ -50,8 +50,8 @@ $yearshow = !empty($y) ? $y+543 : "";
             'format'=>'raw',
             'headerOptions' => ['class'=>'text-center'],
             'contentOptions' => ['class'=>'text-left'],
-            'value' => function ($data) {
-                return $data['kpiname']
+            'value' => function ($data) use ($y) {
+                return Html::a($data['kpiname'],'kpidatalink?kpiid='.$data['kpiid'].'&year='.$y)
                         ."<br /> <strong style='color:blue'>ตัวตั้ง:</strong>"
                         .$data['acol']
                         ."<br /> <strong style='color:green'>ตัวหาร:</strong>"
@@ -69,9 +69,15 @@ $yearshow = !empty($y) ? $y+543 : "";
             'contentOptions' => ['class'=>'text-center'],
         ],
         [
-            'label'=>'ค่าดัชนี', 'attribute'=>'result','format'=>['decimal',2],
+            'label'=>'ค่าดัชนี',
+            'format' => 'raw',
             'headerOptions' => ['class'=>'text-center'],
             'contentOptions' => ['class'=>'text-center'],
+            'value' => function ($data) {
+        return  ($data['target'] > 0) ? $data['result'] >= $data['target'] ? 
+                '<font style="color: green">'.$data['result'].'</font>' :
+                '<font style="color: red">'.$data['result'].'</font>' : $data['result'];
+            }
         ],
         [
             'label'=>'เป้าหมาย', 'attribute'=>'target','format'=>['decimal',2],
