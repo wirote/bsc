@@ -108,4 +108,22 @@ ORDER BY t.kpiid
         ]);
     }
 
+    public function actionKpidatadetail($kpiid, $year) {
+        $year = $year+543;
+        $sql = "
+SELECT t.kpiid, t.byear, t.divide, t.denom, t.result
+, k.kpiname, k.acol, k.bcol, k.target
+FROM kpidata t JOIN kpi k on t.kpiid = k.id
+WHERE t.byear = '$year' and t.kpiid = '$kpiid'
+";
+        $data = Yii::$app->db->createCommand($sql)->queryAll();
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $data,
+        ]);
+        return $this->render('kpidatadetail', [
+                    'dataProvider' => $dataProvider,
+            'sql'=>$sql
+        ]);
+    }
+
 }

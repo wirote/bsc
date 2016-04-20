@@ -51,7 +51,7 @@ $yearshow = !empty($y) ? $y+543 : "";
             'headerOptions' => ['class'=>'text-center'],
             'contentOptions' => ['class'=>'text-left'],
             'value' => function ($data) use ($y) {
-                return Html::a($data['kpiname'],'kpidatalink?kpiid='.$data['kpiid'].'&year='.$y)
+                return Html::a($data['kpiname'],'kpidatadetail?kpiid='.$data['kpiid'].'&year='.$y)
                         ."<br /> <strong style='color:blue'>ตัวตั้ง:</strong>"
                         .$data['acol']
                         ."<br /> <strong style='color:green'>ตัวหาร:</strong>"
