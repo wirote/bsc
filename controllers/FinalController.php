@@ -70,12 +70,13 @@ FROM kpi k
         ]);
     }
 
-    public function actionKpidetail($id) {
+    public function actionKpidetail($id = NULL) {
         $sql = "
 SELECT k.id, k.kpiname, k.kpidesc, k.acol, k.bcol, k.target
 FROM kpi k
 WHERE k.id = $id
 ";
+        
         $data = Yii::$app->db->createCommand($sql)->queryAll();
         $dataProvider = new ArrayDataProvider([
             'allModels' => $data,

@@ -17,7 +17,7 @@ $y = isset($_REQUEST['year'])?$_REQUEST['year']:"";
 $yearshow = !empty($y) ? $y+543 : "";
 ?>
 <!-- ส่วนแสดง dropdown -->
-<?= Html::beginForm(); ?>
+<?= Html::beginForm([''], 'post', ['enctype' => 'multipart/form-data']); ?>
 <?= Html::label('ปีงบประมาณ') ?>
 <?= Html::dropDownList('year', $y, ArrayHelper::map(
     Yearselect::find()->orderBy('yearvalue desc')->all(),
