@@ -110,7 +110,7 @@ $(function () {
             plotShadow: false
         },
         title: {
-            text: '$chart_title'
+            text: '$chart_title2'
         },
         credits: {\"enabled\": false},
         pane: {
