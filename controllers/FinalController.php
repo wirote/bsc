@@ -126,4 +126,22 @@ WHERE t.byear = '$year' and t.kpiid = '$kpiid'
         ]);
     }
 
+    public function actionAlcoholic() {
+        $sql = "
+select c.changwatcode, c.changwatname
+, t.date_com, t.b_year, sum(t.total) as man, sum(t.visit) as visit
+from hdc.s_alcoholic t join hdc.chospital h on t.hospcode=h.hoscode
+join hdc.cchangwat c on h.provcode=c.changwatcode
+group by c.changwatcode
+";
+        $data = Yii::$app->db->createCommand($sql)->queryAll();
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $data,
+            'pagination' => FALSE
+        ]);
+        return $this->render('alcoholic', [
+                    'dataProvider' => $dataProvider,
+            'sql'=>$sql
+        ]);
+    }
 }

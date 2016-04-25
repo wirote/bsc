@@ -40,8 +40,6 @@ $gridcolumns = [
 'column'=>[
         
     ],
-    
--->
 <table class="table table-striped table-bordered table-responsive table-hover table-condensed">
     <tr>
         <th>x</th>
@@ -62,3 +60,5 @@ $gridcolumns = [
         <td>.</td>
     </tr>
 </table>
+    
+-->
