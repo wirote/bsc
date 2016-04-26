@@ -62,7 +62,7 @@ select t.hospcode, t.hospname
 , t.cntm10, t.cntm11, t.cntm12, t.cntm01, t.cntm02, t.cntm03
 , t.cntm04, t.cntm05, t.cntm06, t.cntm07, t.cntm08, t.cntm09
 from cmidata t
-where t.chwcode = 76
+where t.chwcode = 73
 ";
         $data = \Yii::$app->db->createCommand($sql)->queryAll();
         $dataProvider = new ArrayDataProvider([

@@ -22,12 +22,12 @@ $this->params['breadcrumbs'][] = $this->title;
     </tr>
     <tr>
         <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
-        <td><?= Html::a('Graph3','graph3')?></td>
+        <td><?= Html::a('Column Chart','graph3')?></td>
         <td><?= Url::to('chart/graph3') ?></td>
     </tr>
     <tr>
         <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
-        <td><?= Html::a('Graph4','graph4')?></td>
+        <td><?= Html::a('Gauge','graph4')?></td>
         <td><?= Url::to('chart/graph4') ?></td>
     </tr>
     <tr>
@@ -39,5 +39,10 @@ $this->params['breadcrumbs'][] = $this->title;
         <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
         <td><?= Html::a('Graph6','graph6')?></td>
         <td><?= Url::to('chart/graph6') ?></td>
+    </tr>
+    <tr>
+        <td style="width: 3%; color: #009587"><span class="glyphicon glyphicon-hand-right"></span></td>
+        <td><?= Html::a('Line Chart','linechart')?></td>
+        <td><?= Url::to('chart/linechart') ?></td>
     </tr>
 </table>
