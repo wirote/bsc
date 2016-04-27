@@ -50,8 +50,15 @@ if ($xtheme == 'Darkly') {
         ],
     ]);
     // Report Menu items
+    /*
+    $rpt_items[] = ['label' => 'First', 'url' => ['/first/index']];
+
+    ['label' => 'Reports','items' => $rpt_items],
+    
+    */
     $rpt_items[] = ['label' => '<span class="glyphicon glyphicon-text-color" aria-hidden="true"></span> First', 'url' => ['/first/index']];
     $rpt_items[] = ['label' => '<span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Frontend', 'url' => ['/frontend/index']];
+    $rpt_items[] = ['label' => '<span class="glyphicon glyphicon-hdd" aria-hidden="true"></span> Data', 'url' => ['/data/index']];
     $rpt_items[] = ['label' => '<span class="glyphicon glyphicon-signal" aria-hidden="true"></span> Graph', 'url' => ['/chart/index']];
     $rpt_items[] = ['label' => '<span class="glyphicon glyphicon-king" aria-hidden="true"></span> Final', 'url' => ['/final/index']];
     echo Nav::widget([
